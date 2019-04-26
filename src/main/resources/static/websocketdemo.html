@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testing websockets</title>
+    <meta charset="utf-8" />
+</head>
+
+<script type="text/javascript">
+    var webSocket =
+        new WebSocket('ws://api.digiexclub.com:8092');
+    webSocket.onerror = function(event) {
+        onError(event)
+    };
+
+    webSocket.onopen = function(event) {
+        onOpen(event)
+    };
+
+    webSocket.onclose = function(event) {
+        onClose(event)
+    };
+
+    webSocket.onmessage = function(event) {
+        onMessage(event)
+    };
+
+    function onMessage(event) {
+        document.getElementById('messages').innerHTML
+            = '<br />' + event.data;
+    }
+
+    function onOpen(event) {
+        document.getElementById('messages').innerHTML
+            = 'Connection established';
+    }
+
+    function onClose(event) {
+        document.getElementById('messages').innerHTML
+            += '<br />disconnection';
+    }
+    function onError(event) {
+        alert(event.data);
+    }
+
+
+</script>
+<body>
+<div>
+
+</div>
+<div id="messages"></div>
+</body>
+</html>
