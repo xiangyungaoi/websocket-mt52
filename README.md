@@ -1,0 +1,5 @@
+# websocket-mt52
+第二次websocket连接mt5
+
+前面的websocet2mt5 仓库之所以提交不成功是因为，我创建github上的websocet2mt5仓库的时候添加了Read.md文件， 本地的websocet2mt5仓库没有Read.me，
+所有造成了gitHub上的仓库比本地的仓库多了个文件，所有不能push. 需要将本地的仓库先pull一下github上的仓库，然后才可以push.
